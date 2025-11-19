@@ -18,7 +18,7 @@ public:
 	void eat() const;
 	void sleep() const;
 	virtual void info() const;
-	virtual void voice() const;
+	virtual void voice() const = 0;
 };
 
 #endif // ANIMAL_H
