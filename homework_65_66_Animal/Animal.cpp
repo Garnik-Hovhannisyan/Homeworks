@@ -21,3 +21,47 @@ void Animal::info() const
 	std::cout << "Age - " << age << std::endl;
 	std::cout << "Weight - " << weight << std::endl;
 }
+
+std::string Animal::getName() const
+{
+	return name;
+}
+
+bool Animal::operator>(const Animal& other) const
+{
+	if (this->weight > other.weight)
+	{
+		return true;
+	}
+
+	else 
+	{
+		return false;
+	}
+}
+
+bool Animal::operator<(const Animal& other) const
+{
+	if (this->weight < other.weight)
+	{
+		return true;	
+	}
+
+	else
+	{
+		return false;
+	}
+}
+
+bool Animal::operator==(const Animal& other) const
+{
+	if (this->weight == other.weight)
+	{
+		return true;
+	}
+
+	else
+	{
+		return false;
+	}
+}

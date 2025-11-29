@@ -22,6 +22,7 @@ public:
 	void follow();
 	void info() const override;
 	Animal* clone() const override;
+	std::string getType() const override;
 };
 // CAT
 class Cat : public Animal
@@ -40,6 +41,7 @@ public:
 	void scratch();
 	void info() const override;
 	Animal* clone() const override;
+	std::string getType() const override;
 };
 // HORSE
 class Horse : public Animal
@@ -58,6 +60,7 @@ public:
 	void rest();
 	void info() const override;
 	Animal* clone() const override;
+	std::string getType() const override;
 };
 // BIRD
 class Bird : public Animal
@@ -76,6 +79,7 @@ public:
 	void fly();
 	void info() const override;
 	Animal* clone() const override;
+	std::string getType() const override;
 };
 // BEAR
 class Bear : public Animal
@@ -93,6 +97,7 @@ public:
 	void voice() const override;
 	void info() const override;
 	Animal* clone() const override;
+	std::string getType() const override;
 };
 // LION
 class Lion : public Animal
@@ -111,6 +116,7 @@ public:
 	void voice() const override;
 	void info() const override;
 	Animal* clone() const override;
+	std::string getType() const override;
 };
 // FROG
 class Frog : public Animal, public Amphibian
@@ -127,6 +133,7 @@ public:
 	void voice() const override; 
 	void info() const override;
 	Animal* clone() const override;
+	std::string getType() const override;
 };
 
 #endif // DERIVED_H

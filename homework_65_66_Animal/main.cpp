@@ -23,8 +23,14 @@ int main()
 	zoo.arr[5] = lion1;
 	zoo.arr[6] = frog1;
 
-	zoo.showInfo();
-	zoo.showVoice();
+	if (*dog1 > *cat1)
+	{
+		std::cout << dog1->getType() << " - " << dog1->getName() << ": is heavier than :" << cat1->getType() << " - " << cat1->getName() << std::endl;
+	}
+	else 
+	{
+		std::cout << cat1->getType() << " - " << cat1->getName() << ": is heavier than :" << dog1->getType() << " - " << dog1->getName() << std::endl;
+	}
 
 	return 0;
 }

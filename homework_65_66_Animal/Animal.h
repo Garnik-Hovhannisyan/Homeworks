@@ -22,6 +22,13 @@ public:
 	virtual void info() const;
 	virtual void voice() const = 0;
 	virtual Animal* clone() const = 0;
+	virtual std::string getType() const = 0;
+	std::string getName() const;
+	
+
+	bool operator >(const Animal& other) const;
+	bool operator <(const Animal& other) const;
+	bool operator ==(const Animal& other) const;
 };
 
 #endif // ANIMAL_H
