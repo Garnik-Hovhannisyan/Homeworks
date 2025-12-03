@@ -1,15 +1,17 @@
 #ifndef MATRIX_H
 #define MATRIX_H
 
+template<typename T>
+
 class Matrix
 {
 protected:
-	int m_rows = 0;
-	int m_cols = 0;
-	char** m_matrix;
+	int m_rows;
+	int m_cols;
+	T** m_matrix;
 
 public:
-	Matrix() = default;
+	Matrix();
 	Matrix(int rows, int cols);
 	Matrix(const Matrix& other);
 	Matrix& operator=(const Matrix& other);
@@ -18,11 +20,11 @@ public:
 	virtual ~Matrix();
 
 public:
-	virtual void fill();
-	virtual void print();
+	virtual void fill() = 0;
+	virtual void print() = 0;
 
 public:
-	friend std::ostream& operator << (std::ostream& os, const Matrix& mat);
+	friend std::ostream& operator << (std::ostream& os, const Matrix<T>& mat);
 };
 
 #endif // MATRIX_H

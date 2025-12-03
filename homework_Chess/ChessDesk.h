@@ -3,7 +3,7 @@
 
 #include "matrix.h"
 
-class ChessDesk : public Matrix
+class ChessDesk : public Matrix<char>
 {
 public:
 	ChessDesk();
@@ -18,4 +18,4 @@ public:
 	void fill() override;
 };
 
-#endif // CHESSDESK
+#endif // CHESSDESK_H

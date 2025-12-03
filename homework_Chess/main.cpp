@@ -8,6 +8,5 @@ int main()
     desk1.fill();
     desk1.print();
 
-
     return 0;
 }
