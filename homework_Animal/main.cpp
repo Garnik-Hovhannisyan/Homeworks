@@ -23,13 +23,14 @@ int main()
 	zoo.arr[5] = lion1;
 	zoo.arr[6] = frog1;
 
-	if (*dog1 > *cat1)
+	for (int i = 0; i < zoo.size; i++)
 	{
-		std::cout << dog1->getType() << " - " << dog1->getName() << ": is heavier than :" << cat1->getType() << " - " << cat1->getName() << std::endl;
-	}
-	else 
-	{
-		std::cout << cat1->getType() << " - " << cat1->getName() << ": is heavier than :" << dog1->getType() << " - " << dog1->getName() << std::endl;
+		Amphibian* aptr = dynamic_cast<Amphibian*>(zoo.arr[i]);
+
+		if (aptr != nullptr)
+		{
+			std::cout << "Animal " << zoo.arr[i]->getName() << " is amphibian." << std::endl;
+		}
 	}
 
 	return 0;
