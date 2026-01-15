@@ -27,6 +27,11 @@ std::string Animal::getName() const
 	return name;
 }
 
+double Animal::getWeight() const
+{
+	return weight;
+}
+
 bool Animal::operator>(const Animal& other) const
 {
 	if (this->weight > other.weight)

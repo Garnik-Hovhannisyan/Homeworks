@@ -1,10 +1,13 @@
 #include <iostream>
+#include <Set>
 
+#include "Animal.h"
 #include "Derived.h"
 #include "Zoo.h"
 
 int main()
 {
+	// ZOO CLASS TEST
 	Zoo zoo(7);
 
 	Dog* dog1 = new Dog("Shun", "White", 2, 5.6, "Shih Tzu", true, true);
@@ -22,7 +25,9 @@ int main()
 	zoo.arr[4] = bear1;
 	zoo.arr[5] = lion1;
 	zoo.arr[6] = frog1;
-
+	
+	// AMPHIBIAN CLASS CHECH
+	std::cout << "Checking is animal amphibian:" << std::endl;
 	for (int i = 0; i < zoo.size; i++)
 	{
 		Amphibian* aptr = dynamic_cast<Amphibian*>(zoo.arr[i]);
@@ -32,6 +37,19 @@ int main()
 			std::cout << "Animal " << zoo.arr[i]->getName() << " is amphibian." << std::endl;
 		}
 	}
+
+	// CHECK ANIMAL COMPARE
+	std::set<Animal*, AnimalComparator> a_set;
+	for (int i = 0; i < zoo.size; i++)
+	{
+		a_set.insert(zoo.arr[i]);
+	}
+	std::cout << "\n\nAnimals in set compared by weight:" << std::endl;
+	for (auto item : a_set)
+	{
+		std::cout << item->getType() << " " << item->getName() << " with weight " << item->getWeight() << std::endl;
+	}
+
 
 	return 0;
 }

@@ -24,11 +24,18 @@ public:
 	virtual Animal* clone() const = 0;
 	virtual std::string getType() const = 0;
 	std::string getName() const;
-	
+	double getWeight() const;
 
 	bool operator >(const Animal& other) const;
 	bool operator <(const Animal& other) const;
 	bool operator ==(const Animal& other) const;
 };
 
+struct AnimalComparator
+{
+	bool operator ()(const Animal* obj1, const Animal* obj2) const
+	{
+		return obj1->getWeight() < obj2->getWeight();
+	}
+};
 #endif // ANIMAL_H
