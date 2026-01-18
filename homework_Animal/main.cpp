@@ -1,5 +1,6 @@
 #include <iostream>
-#include <Set>
+#include <set>
+#include <unordered_set>
 
 #include "Animal.h"
 #include "Derived.h"
@@ -38,18 +39,28 @@ int main()
 		}
 	}
 
-	// CHECK ANIMAL COMPARE
+	// CHECK ANIMAL COMPARE SET
 	std::set<Animal*, AnimalComparator> a_set;
 	for (int i = 0; i < zoo.size; i++)
 	{
 		a_set.insert(zoo.arr[i]);
 	}
 	std::cout << "\n\nAnimals in set compared by weight:" << std::endl;
-	for (auto item : a_set)
+	for (auto it : a_set)
 	{
-		std::cout << item->getType() << " " << item->getName() << " with weight " << item->getWeight() << std::endl;
+		std::cout << it->getType() << " " << it->getName() << " with weight " << it->getWeight() << std::endl;
 	}
 
-
+	// CHECK ANIMAL COMPARE UNORDERED_SET
+	std::unordered_set<Animal*, AnimalHash, AnimalEqual> a_uset;
+	for (int i = 0; i < zoo.size; i++)
+	{
+		a_uset.insert(zoo.arr[i]);
+	}
+	std::cout << "\n\nAnimals in unordered_set:" << std::endl;
+	for (auto it : a_set)
+	{
+		std::cout << it->getType() << " " << it->getName() << " with weight " << it->getWeight() << std::endl;
+	}
 	return 0;
 }

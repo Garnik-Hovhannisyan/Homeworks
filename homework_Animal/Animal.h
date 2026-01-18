@@ -38,4 +38,21 @@ struct AnimalComparator
 		return obj1->getWeight() < obj2->getWeight();
 	}
 };
+
+struct AnimalHash
+{
+	size_t operator ()(const Animal* obj) const
+	{
+		return std::hash<std::string>()(obj->getName()) ^ std::hash<double>()(obj->getWeight());
+	}
+};
+
+struct AnimalEqual
+{
+	bool operator ()(const Animal* obj1, const Animal* obj2) const
+	{
+		return obj1->getName() == obj2->getName() && obj1->getWeight() == obj2->getWeight();
+	}
+};
+
 #endif // ANIMAL_H
